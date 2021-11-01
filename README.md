@@ -1,0 +1,32 @@
+#管理員MANAGER
+CREATE TABLE MANAGER_seq
+(
+	MG_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+
+CREATE TABLE MANAGER (
+    MG_no VARCHAR(20) NOT NULL PRIMARY KEY DEFAULT '0',
+    MG_email VARCHAR(20) NOT NULL,
+    MG_password VARCHAR(20) NOT NULL,
+    MG_name VARCHAR(20) NOT NULL,
+	MG_title VARCHAR(20) NOT NULL,
+    MG_spec VARCHAR(45),
+    Line_id VARCHAR(20) ,
+    Line_url VARCHAR(20) ,
+    MG_createtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    MG_updatetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
+    
+);
+
+DELIMITER $$
+CREATE TRIGGER tg_MANAGER_insert
+BEFORE INSERT ON MANAGER
+FOR EACH ROW
+BEGIN
+  INSERT INTO MANAGER_seq VALUES (NULL);
+  SET NEW.MG_no = CONCAT('MG', LPAD(LAST_INSERT_ID(), 3, '0'));
+END$$
+DELIMITER ;
+
+INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES ('123456@gmail.com', '123456', '大翔', '老闆', null, '123456', null);
+INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES ('654321@gmail.com', '654321', '小翔', '小編', null, null, null);
