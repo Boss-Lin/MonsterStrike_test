@@ -104,3 +104,8 @@ hs_err_pid*
 =======
 hs_err_pid*
 >>>>>>> 71df9bbbfc10beca0eedee715485e81da17d8a7c
+
+.classpath
+.project
+.settings/
+target/
