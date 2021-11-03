@@ -8,15 +8,16 @@ public class Test {
         ManagerJDBCDAO dao = new ManagerJDBCDAO();
 
         /**新增*/
-//        ManagerVO ManagerVO1 = new ManagerVO();
-//        ManagerVO1.setMG_email("22222@gmail.com");
-//        ManagerVO1.setMG_password("22222");
-//        ManagerVO1.setMG_name("4魚");
-//        ManagerVO1.setMG_title("小編");
-//        ManagerVO1.setMG_spec("");
-//        ManagerVO1.setLine_id("");
-//        ManagerVO1.setLine_url("");
-//        System.out.println("成功新增");
+        ManagerVO ManagerVO1 = new ManagerVO();
+        ManagerVO1.setMG_email("3333@gmail.com");
+        ManagerVO1.setMG_password("3");
+        ManagerVO1.setMG_name("3魚");
+        ManagerVO1.setMG_title("小編");
+        ManagerVO1.setMG_spec("");
+        ManagerVO1.setLine_id("");
+        ManagerVO1.setLine_url("");
+        dao.insert(ManagerVO1);
+        System.out.println("成功新增");
 
         /**更新(成功)*/
 //        ManagerVO ManagerVO2 = new ManagerVO();
@@ -31,7 +32,7 @@ public class Test {
 //		System.out.println("---------------------");
 
         /**刪除(成功)*/
-//        dao.delete("MG003");
+//        dao.delete("MG0003");
 //		System.out.println("成功刪除");
 
 

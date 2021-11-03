@@ -15,6 +15,7 @@ public class ManagerService {
 
         ManagerVO managerVO = new ManagerVO();
 
+//        managerVO.setMG_no(MG_no);
         managerVO.setMG_email(MG_email);
         managerVO.setMG_password(MG_password);
         managerVO.setMG_name(MG_name);
@@ -25,7 +26,6 @@ public class ManagerService {
         managerVO.setMG_createtime(MG_createtime);
         managerVO.setMG_updatetime(MG_updatetime);
 
-//        managerVO.setMG_no(dao.insert(managerVO));
         dao.insert(managerVO);
 
         return managerVO;

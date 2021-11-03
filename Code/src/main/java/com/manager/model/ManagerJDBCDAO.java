@@ -10,12 +10,7 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
     private static final String USER = "root";
     private static final String PASSWORD = "123456";
 
-//    private static final String INSERT_SQL = "INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private static final String INSERT_SQL = "INSERT INTO MANAGER\n" +
-            "(MG_no,MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) \n" +
-            "SELECT CONCAT('MG', LPAD(SUBSTRING(IFNULL(MAX(MG_no),'00000'),3,3)+1, 3, '0')) ,\n" +
-            "'?', '?', '?', '?', '?', '?', '?' FROM MANAGER;";
-
+    private static final String INSERT_SQL = "INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_SQL= "UPDATE MANAGER SET MG_name = ?, MG_title = ?, Line_id = ?, Line_url = ?, MG_spec = ? WHERE MG_no = ?";
     private static final String DELETE_SQL = "DELETE FROM MANAGER WHERE MG_no = ?";
     private static final String pswUpdate_SQL = "UPDATE MANAGER SET MG_password = ? WHERE MG_no = ?";
