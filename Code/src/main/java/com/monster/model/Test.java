@@ -1,7 +1,5 @@
 package com.monster.model;
 
-import com.manager.model.ManagerJDBCDAO;
-
 import java.io.IOException;
 import java.util.List;
 

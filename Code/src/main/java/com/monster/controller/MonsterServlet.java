@@ -15,7 +15,6 @@ public class MonsterServlet extends HttpServlet {
         res.setContentType("text/html; charset=UTF-8");
         String action = req.getParameter("action");
 
-
         //新增
         //更新
         //刪除
