@@ -7,9 +7,9 @@ public class MonsterVO implements java.io.Serializable {
     private String M_name;
 //    private String M_pic;角色圖片，先略過
     private String M_tybe;
-//    private String PassiveSkill; 反陷阱能力，先略過
-//    private String EnergySkill
-//    private String InvolvedSkill;
+    private String PassiveSkill; //反陷阱能力，先略過
+    private String EnergySkill;
+    private String InvolvedSkill;
     private String M_luckySkill;
     private String M_hit;
     private String M_combatType;
@@ -47,6 +47,30 @@ public class MonsterVO implements java.io.Serializable {
 
     public void setM_tybe(String M_tybe) {
         this.M_tybe = M_tybe;
+    }
+
+    public String getPassiveSkill() {
+        return PassiveSkill;
+    }
+
+    public void setPassiveSkill(String PassiveSkill) {
+        this.PassiveSkill = PassiveSkill;
+    }
+
+    public String getEnergySkill() {
+        return EnergySkill;
+    }
+
+    public void setEnergySkill(String EnergySkill) {
+        this.EnergySkill = EnergySkill;
+    }
+
+    public String getInvolvedSkill() {
+        return InvolvedSkill;
+    }
+
+    public void setInvolvedSkill(String InvolvedSkill) {
+        this.InvolvedSkill = InvolvedSkill;
     }
 
     public String getM_luckySkill() {

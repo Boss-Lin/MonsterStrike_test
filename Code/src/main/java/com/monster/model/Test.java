@@ -1,5 +1,7 @@
 package com.monster.model;
 
+import com.manager.model.ManagerJDBCDAO;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -70,6 +72,9 @@ public class Test {
             System.out.println(allMonsters.getM_no() + ",");
             System.out.println(allMonsters.getM_name() + ",");
             System.out.println(allMonsters.getM_tybe() + ",");
+            System.out.println(allMonsters.getPassiveSkill() + ",");
+            System.out.println(allMonsters.getEnergySkill() + ",");
+            System.out.println(allMonsters.getInvolvedSkill() + ",");
             System.out.println(allMonsters.getM_luckySkill() + ",");
             System.out.println(allMonsters.getM_hit() + ",");
             System.out.println(allMonsters.getM_combatType() + ",");
