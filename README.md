@@ -1,32 +1,14 @@
-#管理員MANAGER
-CREATE TABLE MANAGER_seq
-(
-	MG_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY
-);
+# 專案問題紀錄
+## Java Code
+- [x] JDBC新增功能失效(解決)
+	* Test.java編寫錯誤
 
-CREATE TABLE MANAGER (
-    MG_no VARCHAR(20) NOT NULL PRIMARY KEY DEFAULT '0',
-    MG_email VARCHAR(20) NOT NULL,
-    MG_password VARCHAR(20) NOT NULL,
-    MG_name VARCHAR(20) NOT NULL,
-	MG_title VARCHAR(20) NOT NULL,
-    MG_spec VARCHAR(45),
-    Line_id VARCHAR(20) ,
-    Line_url VARCHAR(20) ,
-    MG_createtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    MG_updatetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
-    
-);
+## 資料庫設計/SQL(MySQL)
+* 使用 Drop table IF EXISTS [table] 來達到即使沒有table也不會因為出錯而導致停止執行指令
+* 設計觸發器Trigger來達到自動新增"編號"的功能
+* 設計一個View表來達到搜尋資料的的方便性(view_monster)
+  * 設計View主要是因為想要達到搜尋SQl指令簡單化，不然要在monster下一堆inner join語法會搞混我的閱讀性，會發瘋。
+  * 如果在monster下"搜尋sql + inner join語法"的話，欄位名稱會因為"inner join"語法的關係被取代，咱不喜歡。
 
-DELIMITER $$
-CREATE TRIGGER tg_MANAGER_insert
-BEFORE INSERT ON MANAGER
-FOR EACH ROW
-BEGIN
-  INSERT INTO MANAGER_seq VALUES (NULL);
-  SET NEW.MG_no = CONCAT('MG', LPAD(LAST_INSERT_ID(), 3, '0'));
-END$$
-DELIMITER ;
 
-INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES ('123456@gmail.com', '123456', '大翔', '老闆', null, '123456', null);
-INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES ('654321@gmail.com', '654321', '小翔', '小編', null, null, null);
+**問題更新 2021/11/9**
