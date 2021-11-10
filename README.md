@@ -1,7 +1,7 @@
 # 專案問題紀錄
 ## Java Code
 - [x] JDBC新增功能失效(解決)
-	* Test.java編寫錯誤
+	* Test.java編寫錯誤(沒有加到" dao.insert(ManagerVO1); "這行)
 
 ## 資料庫設計/SQL(MySQL)
 * 使用 Drop table IF EXISTS [table] 來達到即使沒有table也不會因為出錯而導致停止執行指令
