@@ -45,10 +45,16 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--spring boot設定-->
+        <!--spring boot設定 Web功能的起步依賴-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--Spring Boot設定 熱佈署設定(功能是更新程式碼以後，可以不用重新啟動伺服器)-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
     </dependencies>
