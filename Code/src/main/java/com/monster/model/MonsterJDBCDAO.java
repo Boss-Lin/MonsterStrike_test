@@ -24,22 +24,6 @@ public class MonsterJDBCDAO implements MonsterDAO_interface {
     private static final String Monsters_get = "SELECT * FROM MONSTER WHERE M_get = ?";
     private static final String Monsters_pool = "SELECT * FROM MONSTER WHERE M_pool = ?";
     private static final String AllMonsters = "SELECT * FROM VIEW_MONSTER;";
-//    private static final String AllMonsters = "SELECT \n" +
-//        "a.M_no, a.M_name, a.M_pic, b.Tybe_name,\n" +
-//        "c.LuckySkill_name,\n" +
-//        "d.Hit_name, e.CombatType_name, f.rarity_name, g.race_name, a.M_ftuit, h.type_name,\n" +
-//        "a.M_friendskill1, a.M_friendskill2, i.get_name, a.M_spec, a.M_pool, a.M_createtime, a.M_updatetime\n" +
-//        "FROM monster a\n" +
-//        "INNER JOIN tybe b \t\tON a.M_tybe = b.Tybe_no\n" +
-//        "INNER JOIN luckyskill c ON a.M_luckySkill = c.LuckySkill_no\n" +
-//        "INNER JOIN hit d \t\tON a.M_hit = d.Hit_no\n" +
-//        "INNER JOIN combattype e ON a.M_combatType = e.CombatType_no\n" +
-//        "INNER JOIN rarity f \tON a.M_rarity = f.rarity_no\n" +
-//        "INNER JOIN race g \t\tON a.M_race = g.race_no\n" +
-//        "INNER JOIN type h \t\tON a.M_type = h.type_no\n" +
-//        "INNER JOIN getway i \tON a.M_get = i.get_no\n" +
-//        "order by M_no asc\n" +
-//        ";";
 
     static {
         try {
@@ -238,24 +222,6 @@ public class MonsterJDBCDAO implements MonsterDAO_interface {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 vo = new MonsterVO();
-//                vo.setM_no(rs.getString("M_no"));
-//                vo.setM_name(rs.getString("M_name"));
-//                vo.setM_tybe(rs.getString("Tybe_name"));
-//                vo.setM_luckySkill(rs.getString("LuckySkill_name"));
-//                vo.setM_hit(rs.getString("Hit_name"));
-//                vo.setM_combatType(rs.getString("CombatType_name"));
-//                vo.setM_rarity(rs.getString("rarity_name"));
-//                vo.setM_race(rs.getString("race_name"));
-//                vo.setM_ftuit(rs.getString("M_ftuit"));
-//                vo.setM_type(rs.getString("type_name"));
-//                vo.setM_friendskill1(rs.getString("M_friendskill1"));
-//                vo.setM_friendskill2(rs.getString("M_friendskill2"));
-//                vo.setM_get(rs.getString("get_name"));
-//                vo.setM_spec(rs.getString("M_spec"));
-//                vo.setM_pool(rs.getString("M_pool"));
-//                vo.setM_createtime(rs.getTimestamp("M_createtime"));
-//                vo.setM_updatetime(rs.getTimestamp("M_updatetime"));
-
                 vo.setM_no(rs.getString("M_no"));
                 vo.setM_name(rs.getString("M_name"));
                 vo.setM_tybe(rs.getString("Tybe"));
