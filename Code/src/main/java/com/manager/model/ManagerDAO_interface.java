@@ -22,6 +22,6 @@ public interface ManagerDAO_interface {
     public ManagerVO findByPrimaryKey(String MG_no);
     public ManagerVO findByAccount(String MG_email);
     public ManagerVO findByName(String MG_name);
-    public ManagerVO findByTitle(String MG_title);
+    public ManagerVO findByTitle(String PM_name);
     public List<ManagerVO> getAllManager();
 }

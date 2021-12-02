@@ -11,7 +11,7 @@ public class ManagerService {
     }
 
     //新增管理員
-    public ManagerVO addManager(String MG_email, String MG_password, String MG_name, String MG_title, String Line_id, String Line_url, String MG_spec, Timestamp MG_createtime, Timestamp MG_updatetime) {
+    public ManagerVO addManager(String MG_email, String MG_password, String MG_name, String MG_title, String Line_id, String Line_url, Timestamp MG_createtime, Timestamp MG_updatetime) {
 
         ManagerVO managerVO = new ManagerVO();
 
@@ -22,7 +22,6 @@ public class ManagerService {
         managerVO.setMG_title(MG_title);
         managerVO.setLine_id(Line_id);
         managerVO.setLine_url(Line_url);
-        managerVO.setMG_spec(MG_spec);
         managerVO.setMG_createtime(MG_createtime);
         managerVO.setMG_updatetime(MG_updatetime);
 
@@ -32,7 +31,7 @@ public class ManagerService {
     }
 
     //更新管理員
-    public ManagerVO updateManager(String MG_no, String MG_email, String MG_password, String MG_name, String MG_title, String Line_id, String Line_url, String MG_spec, Timestamp MG_updatetime) {
+    public ManagerVO updateManager(String MG_no, String MG_email, String MG_password, String MG_name, String MG_title, String Line_id, String Line_url, Timestamp MG_updatetime) {
 
         ManagerVO managerVO = new ManagerVO();
 
@@ -41,7 +40,6 @@ public class ManagerService {
         managerVO.setMG_password(MG_password);
         managerVO.setMG_name(MG_name);
         managerVO.setMG_title(MG_title);
-        managerVO.setMG_spec(MG_spec);
         managerVO.setMG_updatetime(MG_updatetime);
 
         dao.update(managerVO);

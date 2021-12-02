@@ -8,9 +8,9 @@ public class ManagerVO implements java.io.Serializable {
     private String MG_password;
     private String MG_name;
     private String MG_title;
+    private String PM_name;
     private String Line_id;
     private String Line_url;
-    private String MG_spec;
     private Timestamp MG_createtime;
     private Timestamp MG_updatetime;
 
@@ -55,6 +55,14 @@ public class ManagerVO implements java.io.Serializable {
         this.MG_title = MG_title;
     }
 
+    public String getPM_name() {
+        return PM_name;
+    }
+
+    public void setPM_name(String PM_name) {
+        this.PM_name = PM_name;
+    }
+
     public String getLine_id() {
         return Line_id;
     }
@@ -69,14 +77,6 @@ public class ManagerVO implements java.io.Serializable {
 
     public void setLine_url(String Line_url) {
         this.Line_url = Line_url;
-    }
-
-    public String getMG_spec() {
-        return MG_spec;
-    }
-
-    public void setMG_spec(String MG_spec) {
-        this.MG_spec = MG_spec;
     }
 
     public Timestamp getMG_createtime() {

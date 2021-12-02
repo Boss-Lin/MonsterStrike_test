@@ -10,15 +10,15 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
     private static final String USER = "root";
     private static final String PASSWORD = "123456";
 
-    private static final String INSERT_SQL = "INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, MG_spec, Line_id, Line_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private static final String UPDATE_SQL= "UPDATE MANAGER SET MG_name = ?, MG_title = ?, Line_id = ?, Line_url = ?, MG_spec = ? WHERE MG_no = ?";
+    private static final String INSERT_SQL = "INSERT INTO MANAGER (MG_email, MG_password, MG_name, MG_title, Line_id, Line_url) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_SQL= "UPDATE MANAGER SET MG_name = ?, MG_title = ?, Line_id = ?, Line_url = ? WHERE MG_no = ?";
     private static final String DELETE_SQL = "DELETE FROM MANAGER WHERE MG_no = ?";
     private static final String pswUpdate_SQL = "UPDATE MANAGER SET MG_password = ? WHERE MG_no = ?";
     private static final String OneManager_no = "SELECT * FROM manager WHERE MG_no = ?";
-    private static final String OneManager_email = "SELECT * FROM manager WHERE MG_email = ?";
-    private static final String OneManager_name = "SELECT * FROM manager WHERE MG_name = ?";
-    private static final String OneManager_title = "SELECT * FROM manager WHERE MG_title = ?";
-    private static final String AllManager = "SELECT * FROM manager";
+    private static final String OneManager_email = "SELECT * FROM monsterstrike.view_manager WHERE MG_email = ?";
+    private static final String OneManager_name = "SELECT * FROM monsterstrike.view_manager WHERE MG_name = ?";
+    private static final String OneManager_title = "SELECT * FROM monsterstrike.view_manager WHERE PM_name = ?";
+    private static final String AllManager = "SELECT * FROM monsterstrike.view_manager";
 
     static {
         try {
@@ -44,9 +44,8 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
             pstmt.setString(2, managerVO.getMG_password());
             pstmt.setString(3, managerVO.getMG_name());
             pstmt.setString(4, managerVO.getMG_title());
-            pstmt.setString(5, managerVO.getMG_spec());
-            pstmt.setString(6, managerVO.getLine_id());
-            pstmt.setString(7, managerVO.getLine_url());
+            pstmt.setString(5, managerVO.getLine_id());
+            pstmt.setString(6, managerVO.getLine_url());
 
             pstmt.executeUpdate();
 
@@ -90,8 +89,7 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
             pstmt.setString(2, managerVO.getMG_title());
             pstmt.setString(3, managerVO.getLine_id());
             pstmt.setString(4, managerVO.getLine_url());
-            pstmt.setString(5, managerVO.getMG_spec());
-            pstmt.setString(6, managerVO.getMG_no());
+            pstmt.setString(5, managerVO.getMG_no());
 
             pstmt.executeUpdate();
 
@@ -203,7 +201,6 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
                 vo.setMG_title(rs.getString("MG_title"));
                 vo.setMG_createtime(rs.getTimestamp("MG_createtime"));
                 vo.setMG_updatetime(rs.getTimestamp("MG_updatetime"));
-                vo.setMG_spec(rs.getString("MG_spec"));
 
             }
         } catch (SQLException e) {
@@ -252,10 +249,9 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
                 vo.setMG_email(rs.getString("MG_email"));
                 vo.setMG_password(rs.getString("MG_password"));
                 vo.setMG_name(rs.getString("MG_name"));
-                vo.setMG_title(rs.getString("MG_title"));
+                vo.setPM_name(rs.getString("PM_name"));
                 vo.setMG_createtime(rs.getTimestamp("MG_createtime"));
                 vo.setMG_updatetime(rs.getTimestamp("MG_updatetime"));
-                vo.setMG_spec(rs.getString("MG_spec"));
 
             }
         } catch (SQLException e) {
@@ -304,10 +300,9 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
                 vo.setMG_email(rs.getString("MG_email"));
                 vo.setMG_password(rs.getString("MG_password"));
                 vo.setMG_name(rs.getString("MG_name"));
-                vo.setMG_title(rs.getString("MG_title"));
+                vo.setPM_name(rs.getString("PM_name"));
                 vo.setMG_createtime(rs.getTimestamp("MG_createtime"));
                 vo.setMG_updatetime(rs.getTimestamp("MG_updatetime"));
-                vo.setMG_spec(rs.getString("MG_spec"));
 
             }
         } catch (SQLException e) {
@@ -356,10 +351,9 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
                 vo.setMG_email(rs.getString("MG_email"));
                 vo.setMG_password(rs.getString("MG_password"));
                 vo.setMG_name(rs.getString("MG_name"));
-                vo.setMG_title(rs.getString("MG_title"));
+                vo.setPM_name(rs.getString("PM_name"));
                 vo.setMG_createtime(rs.getTimestamp("MG_createtime"));
                 vo.setMG_updatetime(rs.getTimestamp("MG_updatetime"));
-                vo.setMG_spec(rs.getString("MG_spec"));
 
             }
         } catch (SQLException e) {
@@ -408,10 +402,9 @@ public class ManagerJDBCDAO implements  ManagerDAO_interface {
                 vo.setMG_email(rs.getString("MG_email"));
                 vo.setMG_password(rs.getString("MG_password"));
                 vo.setMG_name(rs.getString("MG_name"));
-                vo.setMG_title(rs.getString("MG_title"));
+                vo.setPM_name(rs.getString("PM_name"));
                 vo.setMG_createtime(rs.getTimestamp("MG_createtime"));
                 vo.setMG_updatetime(rs.getTimestamp("MG_updatetime"));
-                vo.setMG_spec(rs.getString("MG_spec"));
 
                 list.add(vo);
             }
