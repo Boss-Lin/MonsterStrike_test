@@ -53,4 +53,13 @@
 
     </dependencies>
 
+    <!-- 可以將應用打包成一個可執行的Jar包，可以使用cmd下指令: java -jar '檔案名稱' 來執行-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
